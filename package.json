@@ -1,11 +1,34 @@
-
 {
-  "name": "react-native-gemius",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "_from": "git+https://github.com/ou2s/react-native-gemius.git",
+  "_id": "react-native-gemius@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/react-native-gemius",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/ou2s/react-native-gemius",
+    "rawSpec": "https://github.com/ou2s/react-native-gemius",
+    "saveSpec": "git+https://github.com/ou2s/react-native-gemius.git",
+    "fetchSpec": "https://github.com/ou2s/react-native-gemius.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/ou2s/react-native-gemius.git#7a92711e02e16cae51bdc7108f7e46f126187e76",
+  "_spec": "https://github.com/ou2s/react-native-gemius",
+  "_where": "/Users/nmjesus/Devel/publico-mobile-gemius",
+  "author": {
+    "name": "Oussama Ghalbzouri"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "## Getting started",
+  "devDependencies": {
+    "react": "^16.2.0",
+    "react-native": "^0.52.1"
   },
   "keywords": [
     "react-native",
@@ -13,14 +36,15 @@
     "cim",
     "cim.be"
   ],
-  "author": "Oussama Ghalbzouri",
   "license": "Gemius SDK is not open-source. Please contact Gemius for more infos.",
+  "main": "index.js",
+  "name": "react-native-gemius",
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
   },
-  "devDependencies": {
-    "react": "^16.2.0",
-    "react-native": "^0.52.1"
-  }
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
 }

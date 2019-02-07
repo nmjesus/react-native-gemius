@@ -12,8 +12,11 @@
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(setAppInfo:(NSString *)app version:(NSString *)version)
+RCT_EXPORT_METHOD(setAppInfo:(NSString *)app version:(NSString *)version gemiusHitcollectorHost:(NSString *)gemiusHitcollectorHost gemiusPrismIdentifier:(NSString *)gemiusPrismIdentifier)
 {
+    [[GEMAudienceConfig sharedInstance] setHitcollectorHost:gemiusHitcollectorHost];
+    [[GEMAudienceConfig sharedInstance] setScriptIdentifier:gemiusPrismIdentifier];
+    [[GEMConfig sharedInstance] setLoggingEnabled:YES];
     [[GEMConfig sharedInstance] setAppInfo:app version:version];
 }
 
@@ -26,7 +29,8 @@ RCT_EXPORT_METHOD(setGemiusInfo:(NSString *)host scriptIdentifierIos:(NSString *
 
 RCT_EXPORT_METHOD(sendPageViewedEvent)
 {
-    GEMAudienceEvent *event = [GEMAudienceEvent new];
+    GEMAudienceEvent *event = [[GEMAudienceEvent alloc] init];
+    [event setEventType:GEM_EVENT_FULL_PAGEVIEW];
     [event sendEvent];
 }
 

@@ -33,15 +33,17 @@ public class RNReactNativeGemiusModule extends ReactContextBaseJavaModule {
 
 
   @ReactMethod
-  public void setAppInfo(String app, String version) {
+  public void setAppInfo(String app, String version, String gemiusHitcollectorHost, String gemiusPrismIdentifier) {
     com.gemius.sdk.Config.setAppInfo(app, version);
+    AudienceConfig.getSingleton().setHitCollectorHost(gemiusHitcollectorHost);
+    AudienceConfig.getSingleton().setScriptIdentifier(gemiusPrismIdentifier);
   }
 
-  @ReactMethod
-  public void setGemiusInfo(String host, String scriptIdentifierIos, String scriptIdentifierAndroid) {
-    AudienceConfig.getSingleton().setHitCollectorHost(host);
-    AudienceConfig.getSingleton().setScriptIdentifier(scriptIdentifierAndroid);
-  }
+  // @ReactMethod
+  // public void setGemiusInfo(String host, String scriptIdentifierIos, String scriptIdentifierAndroid) {
+  //   AudienceConfig.getSingleton().setHitCollectorHost(host);
+  //   AudienceConfig.getSingleton().setScriptIdentifier(scriptIdentifierAndroid);
+  // }
 
 
   @ReactMethod
@@ -49,5 +51,4 @@ public class RNReactNativeGemiusModule extends ReactContextBaseJavaModule {
     AudienceEvent event = new AudienceEvent(reactContext);
     event.sendEvent();
   }
-
 }
