@@ -20,13 +20,6 @@ RCT_EXPORT_METHOD(setAppInfo:(NSString *)app version:(NSString *)version gemiusH
     [[GEMConfig sharedInstance] setAppInfo:app version:version];
 }
 
-RCT_EXPORT_METHOD(setGemiusInfo:(NSString *)host scriptIdentifierIos:(NSString *)scriptIdentifierIos scriptIdentifierAndroid:(NSString *)scriptIdentifierAndroid)
-{
-    [[GEMAudienceConfig sharedInstance] setHitcollectorHost:host];
-    [[GEMAudienceConfig sharedInstance] setScriptIdentifier:scriptIdentifierIos];
-}
-
-
 RCT_EXPORT_METHOD(sendPageViewedEvent)
 {
     GEMAudienceEvent *event = [[GEMAudienceEvent alloc] init];
