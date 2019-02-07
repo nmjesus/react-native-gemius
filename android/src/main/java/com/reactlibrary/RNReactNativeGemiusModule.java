@@ -39,16 +39,10 @@ public class RNReactNativeGemiusModule extends ReactContextBaseJavaModule {
     AudienceConfig.getSingleton().setScriptIdentifier(gemiusPrismIdentifier);
   }
 
-  // @ReactMethod
-  // public void setGemiusInfo(String host, String scriptIdentifierIos, String scriptIdentifierAndroid) {
-  //   AudienceConfig.getSingleton().setHitCollectorHost(host);
-  //   AudienceConfig.getSingleton().setScriptIdentifier(scriptIdentifierAndroid);
-  // }
-
-
   @ReactMethod
   public void sendPageViewedEvent() {
-    AudienceEvent event = new AudienceEvent(reactContext);
+    AudienceEvent event = new AudienceEvent(this.reactContext);
+    event.setEventType(AudienceEvent.EventType.FULL_PAGEVIEW);
     event.sendEvent();
   }
 }
